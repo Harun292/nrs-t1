@@ -36,7 +36,9 @@ public class GradController {
     public GradController(Grad grad, ArrayList<Drzava> drzave) {
         this.grad = grad;
         listDrzave = FXCollections.observableArrayList(drzave);
-        listaZnamenitosti= FXCollections.observableArrayList(grad.getZnamenitosti());
+        if(grad!=null){
+            listaZnamenitosti= FXCollections.observableArrayList(grad.getZnamenitosti());
+        }
         dao=GeografijaDAO.getInstance();
     }
 
